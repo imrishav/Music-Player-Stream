@@ -16,7 +16,7 @@
 		$con = new mysqli($server, $username, $password, $db);
 
 		if(mysqli_connect_errno()){
-		echo "Failed to Connect " . mysqli_connect_errno();
+		echo "Failed to Connect RIshavJi" . mysqli_connect_errno();
 	}
 
 	// $con = mysqli_connect("localhost:3310","root","","spotify");
