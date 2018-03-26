@@ -11,7 +11,7 @@
 		$server = $url["us-cdbr-iron-east-05.cleardb.net"];
 		$username = $url["ba13ac2ea1fc64"];
 		$password = $url["0090cde6"];
-		$db = substr($url["heroku_fb7c8e9620d0bf1"], 1);
+		$db = substr($url["spotify.sql"], 1);
 		 
 		$con = new mysqli($server, $username, $password, $db);
 
