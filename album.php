@@ -95,8 +95,7 @@ $artist = $album->getArtist();
 	<input type="hidden" class="songId">
 	<!-- <div class="item">Add to Playlist</div> -->
 	<?php echo Playlist::getPlaylistDropDown($con, $userLoggedIn->getUsername());?>
-	<div class="item">Item 2</div>
-	<div class="item">Item 2</div>
+
 	
 
 </nav>

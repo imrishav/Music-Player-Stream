@@ -54,7 +54,7 @@ $owner = new User($con, $playlist->getOwner());
 							</div>
 
 							<div class='trackInfo'>
-								<span class='trackName'>" . $playlistSong->getTitle() ."</span>
+								<span class ='trackName'>" . $playlistSong->getTitle() ."</span>
 								<span class='artistName'>" . $songArtist->getName() ."</span>
 
 							</div>

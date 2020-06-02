@@ -4,15 +4,17 @@ include("includes/config.php");
 include("includes/cLasses/Artist.php");
 include("includes/cLasses/Album.php");
 include("includes/cLasses/Songs.php");
-
+include("includes/cLasses/User.php");
+include("includes/cLasses/Playlist.php");
 //session_destroy(); //LOFOUT..
 if(isset($_SESSION['userLoggedIn'])){
 
-	$userLoggedIn = $_SESSION['userLoggedIn'];
+ 	$userLoggedIn = new User($con, $_SESSION['userLoggedIn']);
 
+	$userName = $userLoggedIn->getUserName();
 	echo "<script>
 
-	userLoggedIn ='$userLoggedIn';
+	userLoggedIn ='$userName';
 
 
 
