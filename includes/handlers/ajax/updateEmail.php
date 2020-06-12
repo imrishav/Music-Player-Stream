@@ -2,7 +2,7 @@
 include("../../config.php");
 
 if(!isset($_POST['username'])) {
-	echo "ERROR: Could not set username";
+	echo "ERROR: Could not set usernamessss";
 	exit();
 }
 

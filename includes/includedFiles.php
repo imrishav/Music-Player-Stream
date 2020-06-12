@@ -2,13 +2,16 @@
 
 
 if(isset($_SERVER['HTTP_X_REQUESTED_WITH'])){
+	ini_set('display_errors', 1);
+error_reporting(-1);
 	//echo "came from ajaxk";
 	include("includes/config.php");
-	include("includes/cLasses/User.php");
-	include("includes/cLasses/Artist.php");
-	include("includes/cLasses/Album.php");
-	include("includes/cLasses/Songs.php");
-	include("includes/cLasses/Playlist.php");
+	include("includes/classes/User.php");
+	include("includes/classes/Artist.php");
+	include("includes/classes/Album.php");
+	include("includes/classes/Songs.php");
+	include("includes/classes/Playlist.php");
+	include("includes/classes/AdminClass.php");
 
 	if(isset($_GET['userLoggedIn'])){
 		$userLoggedIn = new User($con, $_GET['userLoggedIn']);
@@ -20,6 +23,8 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH'])){
 
 }
 else {
+	ini_set('display_errors', 1);
+error_reporting(-1);
 	include("includes/header.php");
 	include("includes/footer.php");
 

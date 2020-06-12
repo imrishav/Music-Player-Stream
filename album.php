@@ -1,10 +1,9 @@
-<?php  
+<?php
 include("includes/includedFiles.php");
 
-if(isset($_GET['id'])) {
+if (isset($_GET['id'])) {
 	$albumId = $_GET['id'];
-}
-else {
+} else {
 	header("Location: index.php");
 }
 
@@ -31,47 +30,46 @@ $artist = $album->getArtist();
 
 
 <div class="trackListContainer">
-	
+
 	<ul class="trackList">
-		
+
 		<?php
-			$songIdArray = $album->getSongIds();
+		$songIdArray = $album->getSongIds();
 
-			$i =1;
+		$i = 1;
 
-			foreach ($songIdArray as $songsId) {
-				$albumSong = new Songs($con, $songsId);
-				$albumArtist = $albumSong->getArtist();
-				//echo $albumSong->getTitle() . "<br>";
+		foreach ($songIdArray as $songsId) {
+			$albumSong = new Songs($con, $songsId);
+			$albumArtist = $albumSong->getArtist();
+			//echo $albumSong->getTitle() . "<br>";
 
-				echo "<li class='trackListRow'>
+			echo "<li class='trackListRow'>
 							<div class='trackCount'>
-							<img class='play' src='assests/images/icons/play-white.png' onclick='setTrack(" . $albumSong->getId() .", tempPlaylist, true)'>
+							<img class='play' src='assests/images/icons/play-white.png' onclick='setTrack(" . $albumSong->getId() . ", tempPlaylist, true)'>
 							<span class='trackNumber'>$i</span>
 							</div>
 
 							<div class='trackInfo'>
-								<span class='trackName'>" . $albumSong->getTitle() ."</span>
-								<span class='artistName'>" . $albumArtist->getName() ."</span>
+								<span class='trackName'>" . $albumSong->getTitle() . "</span>
+								<span class='artistName'>" . $albumArtist->getName() . "</span>
 
 							</div>
 
 							<div class='trackOptions'>
-								<input type='hidden' class='songId' value='" . $albumSong->getId() ."'>
+								<input type='hidden' class='songId' value='" . $albumSong->getId() . "'>
 								<img class='optionsButton' src='assests/images/icons/more.png' onclick='showOptionsMenu(this)'>
 								
 							</div>
 
 							<div class='trackDuration'>
-								<span class='duration'>" . $albumSong->getDuration() ."</span>
+								<span class='duration'>" . $albumSong->getDuration() . "</span>
 								
 							</div>
 
 						</li>";
 
-				$i = $i +1;
-
-			}
+			$i = $i + 1;
+		}
 
 		?>
 
@@ -81,8 +79,6 @@ $artist = $album->getArtist();
 			var tempSongIds = '<?php echo json_encode($songIdArray); ?>';
 
 			tempPlaylist = JSON.parse(tempSongIds);
-
-
 		</script>
 
 
@@ -91,17 +87,11 @@ $artist = $album->getArtist();
 </div>
 
 <nav class="optionMenu">
-	
+
 	<input type="hidden" class="songId">
 	<!-- <div class="item">Add to Playlist</div> -->
-	<?php echo Playlist::getPlaylistDropDown($con, $userLoggedIn->getUsername());?>
+	<?php echo Playlist::getPlaylistDropDown($con, $userLoggedIn->getUsername()); ?>
 
-	
+
 
 </nav>
-
-
-
-
-
-

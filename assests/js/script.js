@@ -48,6 +48,8 @@ $(document).on('change', 'select.playlist', function () {
   })
 })
 
+
+
 function openPage (url) {
   if (timer != null) {
     clearTimeout(timer)
@@ -259,3 +261,25 @@ function hideOptionsMenu () {
     menu.css('display', 'none')
   }
 }
+
+function getValues () {
+  console.log('dsad')
+}
+
+$(function () {
+  $("#chkPassport").click(function () {
+      if ($(this).is(":checked")) {
+          $("#dvPassport").show();
+          $("#AddPassport").hide();
+      } else {
+          $("#dvPassport").hide();
+          $("#AddPassport").show();
+      }
+  });
+});
+
+
+function formadd(e) {
+  e.preventDefault()
+    console.log('cc')
+  }

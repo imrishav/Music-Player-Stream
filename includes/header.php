@@ -1,11 +1,11 @@
 <?php
 
 include("includes/config.php");
-include("includes/cLasses/Artist.php");
-include("includes/cLasses/Album.php");
-include("includes/cLasses/Songs.php");
-include("includes/cLasses/User.php");
-include("includes/cLasses/Playlist.php");
+include("includes/classes/Artist.php");
+include("includes/classes/Album.php");
+include("includes/classes/Songs.php");
+include("includes/classes/User.php");
+include("includes/classes/Playlist.php");
 //session_destroy(); //LOFOUT..
 if(isset($_SESSION['userLoggedIn'])){
 
