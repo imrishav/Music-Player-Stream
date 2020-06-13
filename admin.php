@@ -23,7 +23,7 @@ require_once("includes/includedFiles.php");
 			<p>
 				<label for="artist">
 					Artist Name :
-					<select name="artist" id="artistName">
+					<select name="artist" id="artitName">
 						<option id='responseArtist' value="empty">Select Artist</option>
 						<?php
 						$sql = mysqli_query($con, "SELECT id,name FROM artist");
@@ -85,14 +85,6 @@ require_once("includes/includedFiles.php");
 			</br>
 			<input type="submit" onclick="formadd(event)" value="Upload File" name="submit">
 		</form>
-
-
-
-
-
-
-
-
 	</div>
 
 	<div class="albumContainer">
@@ -125,14 +117,9 @@ require_once("includes/includedFiles.php");
 				Add New Artist?
 			</label>
 			<p id='selectFromUp2' style="display: none;">Artist Already Exist.Please Select from Above</p>
-
-
-
-
 			<p>
 				<label>
 					Genre Name :
-
 					<select name="genre">
 						<option value="empty">Select Genere</option>
 						<?php

@@ -58,7 +58,7 @@
 				$profilePic = "assests/images/profile-pic/head_emerald.png";
 				$date = date("Y-m-d");
 
-				$result = mysqli_query($this->con, "INSERT INTO users VALUES('', '$un', '$fn' , '$ln', '$em','$encryptedPw','$date','$profilePic')");
+				$result = mysqli_query($this->con, "INSERT INTO users VALUES('', '$un', '$fn' , '$ln', '$em','$encryptedPw','$date','$profilePic','0')");
 
 				return $result;
 
