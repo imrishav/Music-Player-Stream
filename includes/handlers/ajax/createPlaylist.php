@@ -3,7 +3,8 @@
 include("../../config.php");
 
 if(isset($_POST['name']) && isset($_POST['username'])){
-
+	var_dump($_POST);
+	die();
 	$name = $_POST['name'];
 	$username = $_POST['username'];
 	$date = date("Y-m-d");

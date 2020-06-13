@@ -15,6 +15,7 @@ error_reporting(-1);
 
 	if(isset($_GET['userLoggedIn'])){
 		$userLoggedIn = new User($con, $_GET['userLoggedIn']);
+		$admin = true;
 	}
 	else{
 		echo "username is not set Variable";
@@ -24,7 +25,7 @@ error_reporting(-1);
 }
 else {
 	ini_set('display_errors', 1);
-error_reporting(-1);
+	error_reporting(-1);
 	include("includes/header.php");
 	include("includes/footer.php");
 

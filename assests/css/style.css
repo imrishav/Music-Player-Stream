@@ -17,6 +17,11 @@ body {
   min-width: 720px;
 }
 
+.adminContainer {
+  display: flex;
+  justify-content: space-evenly;
+}
+
 #nowPlayingBarContainer {
   width: 100%;
   background-color: #282828;

@@ -32,6 +32,16 @@
 			$row = mysqli_fetch_array($query);
 			return $row['name'];
 		}
+
+		public function isAdmin() {
+			$query = mysqli_query($this->con,"SELECT isAdmin  FROM users WHERE username='$this->username'");
+			$row = mysqli_fetch_array($query);
+			return (bool)$row['isAdmin'];
+			
+
+
+			return "rishav";
+		}
 	}
 
 

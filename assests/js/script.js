@@ -84,6 +84,8 @@ function createPlaylist () {
   }
 }
 
+
+
 function hideOptionMenu () {
   var menu = $('.optionMenu')
 
@@ -282,4 +284,8 @@ $(function () {
 function formadd(e) {
   e.preventDefault()
     console.log('cc')
-  }
+}
+  
+function testABc() {
+  console.log('abc')
+}

@@ -47,9 +47,17 @@ include_once("includes/includedFiles.php");
 			<div class="navItem">
 				<span role="link" tabindex="0" onclick="logout()" class="navItemLink">Logout</span>
 			</div>
-			<div class="navItem">
+			<!-- <div class="navItem">
 				<span role="link" tabindex="0" onclick="openPage('admin.php')" class="navItemLink">Add Song</span>
-			</div>
+			</div> -->
+
+			<?php if($userLoggedIn->isAdmin()) : ?>
+				<div class="navItem">
+					<span role="link" tabindex="0" onclick="openPage('admin.php')" class="navItemLink">Add Song</span>
+				</div>
+			<?php endif; ?>
+			
+			
 		</div>
 
 
