@@ -8,26 +8,27 @@
 		
 	<div class="gridViewContainer">
 		
-		<h2>Playlist</h2>
+		<h2>Playlist By Other Users</h2>
 
-		<div class="buttonItems">
+		<!-- <div class="buttonItems">
 			<button class="button green" onclick="createPlaylist()">NEW PLAYLIST</button>
+
 		</div>
 
-		<form id='addPlaylistForm' style="display: none;" enctype="multipart/form-data">
+		<form id='addPlaylistForm' style="display: none;">
 			<input type="text" placeholder="Playlist Name" />
 			<input type="checkbox" name="publicPlaylist" id="public"> Make This Playlist Public
-			<input id='playlistArt' type="file" name="files[]" multiple>
 
 			<input type="submit" onclick="addPlaylist(event)" value="Upload File" name="submit">
-		</form>
+
+		</form> -->
 
 
 		<?php
 
 				$username = $userLoggedIn->getUsername();
 
-				$playlistQuery = mysqli_query($con, "SELECT * FROM playlist WHERE owner= '$username'");
+				$playlistQuery = mysqli_query($con, "SELECT * FROM playlist WHERE isPublic= 1");
 
 				if(mysqli_num_rows($playlistQuery) == 0) {
 					echo "<span class='noResults'>You Don't have any Playlist</span>";
@@ -57,6 +58,7 @@
 	?>
 
 	</div>
+
 
 
 </div>

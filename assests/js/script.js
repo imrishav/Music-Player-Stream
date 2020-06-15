@@ -64,24 +64,91 @@ function openPage (url) {
   history.pushState(null, null, url) // no url changing in the address bar when navigating...
 }
 
-function createPlaylist () {
-  var alert1 = prompt('Please Enter your Playlist Name')
+function addPlaylist(event) {
+  event.preventDefault();
 
-  if (alert1 != null) {
-    $.post('includes/handlers/ajax/createPlaylist.php', {
-      name: alert1,
-      username: userLoggedIn
-    }).done(function (error) {
-      // Do Something when Ajax returns
+  let makeThisPlayListPublic = document.querySelector('#public').checked;
 
-      if (error != '') {
-        alert(error)
-        return
-      }
+  var $inputs = $('#addPlaylistForm :input');
 
+		// not sure if you wanted this, but I thought I'd add it.
+		// get an associative array of just the values.
+		var values = {};
+		var arr = [];
+		const formData = new FormData();
+		$inputs.each(function() {
+			values[this.name] = $(this).val();
+			arr.push($(this).val())
+    });
+    const files = document.querySelector('#playlistArt').files;
+		console.log('files', files)
+		for (let i = 0; i < files.length; i++) {
+			let file = files[i];
+
+			formData.append('files[]', file);
+    }
+    formData.append('name', arr[0].toLowerCase())
+		formData.append('isPublic', makeThisPlayListPublic)
+		formData.append('username', userLoggedIn)
+  
+  // let playlistName = arr[0].toLowerCase();
+  // if (playlistName != null) {
+  //   $.post('includes/handlers/ajax/createPlaylist.php', {
+  //     name: playlistName,
+  //     username: userLoggedIn,
+  //     isPublic: makeThisPlayListPublic
+  //   }).done(function (error) {
+  //     // Do Something when Ajax returns
+
+  //     if (error != '') {
+  //       alert(error)
+  //       return
+  //     }
+
+  //     openPage('yourMusic.php')
+  //   })
+  // }
+
+  const url = "includes/handlers/ajax/createPlaylist.php";
+
+		fetch(url, {
+			method: 'POST',
+			body: formData
+		}).then(response => {
+			console.log('response')
+			// openPage('admin.php')
       openPage('yourMusic.php')
-    })
-  }
+
+			return response.text();
+		}).then(data => {
+			console.log(data);
+		});
+
+
+}
+
+function createPlaylist() {
+  let showForm = $('#addPlaylistForm');
+
+  showForm.show();
+  // console.log('insiede')
+  // var alert1 = prompt('Please Enter your Playlist Name')
+
+  // if (alert1 != null) {
+  //   $.post('includes/handlers/ajax/createPlaylist.php', {
+  //     name: alert1,
+  //     username: userLoggedIn
+  //   }).done(function (error) {
+  //     // Do Something when Ajax returns
+
+  //     if (error != '') {
+  //       alert(error)
+  //       return
+  //     }
+
+  //     openPage('yourMusic.php')
+  //   })
+  // }
 }
 
 

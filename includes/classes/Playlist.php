@@ -7,6 +7,7 @@
 		private $id;
 		private $name;
 		private $owner;
+		private $artWork;
 
 		public function __construct($con, $data){
 
@@ -22,8 +23,13 @@
 			$this->id = $data['id'];
 			$this->name = $data['name'];
 			$this->owner = $data['owner'];
+			$this->artWork = $data['playlistArtwork'];
 		}
 
+
+		public function getArtwork() {
+			return $this->artWork;
+		}
 
 
 		public function getId(){

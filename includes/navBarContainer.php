@@ -39,6 +39,10 @@ include_once("includes/includedFiles.php");
 				<span role="link" tabindex="0" onclick="openPage('yourMusic.php')" class="navItemLink">Your Music</span>
 			</div>
 
+			<div class="navItem">
+				<span role="link" tabindex="0" onclick="openPage('publicPlaylist.php')" class="navItemLink">All Playlist</span>
+			</div>
+
 
 
 			<div class="navItem">
