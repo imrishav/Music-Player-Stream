@@ -6,7 +6,7 @@ body {
 }
 
 #loginContainer * {
-  color: #fff;
+  /* color: #fff; */
   font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
   font-weight: normal;
   line-height: 1em;
@@ -72,9 +72,20 @@ body {
   cursor: pointer;
 }
 
+#artitName {
+  display: block;
+  background-color: transparent;
+  border: 0;
+  border-bottom: 1px solid #fff;
+  height: 27px;
+  line-height: 27px;
+  width: 100%;
+}
+
 #inputContainer input[type='text'],
 #inputContainer input[type='email'],
-#inputContainer input[type='password'] {
+#inputContainer input[type='password']
+#inputContainer select {
   display: block;
   background-color: transparent;
   border: 0;

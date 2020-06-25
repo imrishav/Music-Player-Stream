@@ -556,15 +556,9 @@ input:focus {
 
 /* ====== */
 
-html,
-body {
-  padding: 0;
-  margin: 0;
-  height: 100%;
-}
 
 #loginContainer * {
-  color: #fff;
+  /* color: #fff; */
   font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
   font-weight: normal;
   line-height: 1em;
@@ -596,6 +590,19 @@ body {
   font-size: 15px;
   display: block;
   margin-top: 20px;
+}
+
+#buttonForAdmin {
+  background-color: transparent;
+  border: 2px solid #fff;
+  border-radius: 400px;
+  color: #fff;
+  display: block;
+  font-size: 14px;
+  letter-spacing: 1px;
+  margin: 20px auto;
+  height: 41px;
+  width: 100%;
 }
 
 #inputContainer button {
@@ -630,9 +637,21 @@ body {
   cursor: pointer;
 }
 
+.selectForAdmin {
+  display: block;
+  background-color: transparent;
+  border: 0;
+  color: #2ebd59;
+  border-bottom: 1px solid #fff;
+  height: 27px;
+  line-height: 27px;
+  width: 100%;
+}
+
 #inputContainer input[type='text'],
 #inputContainer input[type='email'],
-#inputContainer input[type='password'] {
+#inputContainer input[type='password']
+#inputContainer select  {
   display: block;
   background-color: transparent;
   border: 0;
@@ -728,3 +747,7 @@ body {
   height: 200px;
   object-fit: contain;
 }
+
+
+/* ===files */
+
